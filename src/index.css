@@ -164,7 +164,8 @@ main {
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(860px, 100%);
+  width: 100%;
+  max-width: 860px;
 }
 
 .eyebrow,
@@ -359,6 +360,54 @@ h3 {
   line-height: 1.68;
 }
 
+.service-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.service-card li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 8px;
+  align-items: start;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.service-card li svg {
+  margin-top: 2px;
+}
+
+.engagement-section {
+  padding-top: 0;
+}
+
+.engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.engagement-grid article {
+  min-height: 210px;
+  padding: 28px;
+  background: var(--sage);
+  border: 1px solid rgba(15, 118, 110, 0.16);
+}
+
+.engagement-grid p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 .band {
   background: var(--navy);
   color: var(--white);
@@ -515,6 +564,8 @@ footer p {
   }
 
   .hero {
+    flex-direction: column;
+    align-items: flex-start;
     min-height: 82svh;
     padding-top: 120px;
   }
@@ -523,6 +574,7 @@ footer p {
     position: relative;
     right: auto;
     bottom: auto;
+    width: 100%;
     margin-top: 32px;
     justify-content: flex-start;
   }
@@ -536,7 +588,8 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .service-grid {
+  .service-grid,
+  .engagement-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -565,6 +618,19 @@ footer p {
     background-position: center;
   }
 
+  .hero-content {
+    max-width: 350px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 10vw, 42px);
+    line-height: 1.02;
+  }
+
+  .hero-copy {
+    font-size: 17px;
+  }
+
   .hero-overlay {
     background:
       linear-gradient(90deg, rgba(11, 30, 50, 0.94), rgba(16, 37, 63, 0.68)),
@@ -591,12 +657,14 @@ footer p {
   }
 
   .service-grid,
+  .engagement-grid,
   .check-grid,
   .sector-list {
     grid-template-columns: 1fr;
   }
 
-  .service-card {
+  .service-card,
+  .engagement-grid article {
     min-height: auto;
   }
 

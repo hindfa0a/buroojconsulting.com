@@ -19,40 +19,75 @@ import "./index.css";
 const services = [
   {
     icon: BriefcaseBusiness,
-    title: "Management & Legal Consulting",
-    text: "Advisory support for Saudi and international firms across business structuring, governance, commercial documentation, and regulatory coordination.",
+    title: "Management & Legal Advisory",
+    text: "Practical advisory for local and international companies on market entry, operating models, governance, commercial arrangements, and regulatory coordination.",
+    items: [
+      "Entity and operating structure",
+      "Governance and commercial arrangements",
+      "Regulatory coordination roadmap",
+    ],
   },
   {
     icon: BarChart3,
-    title: "Feasibility Studies & SIDF",
-    text: "Bankable feasibility studies, market analysis, financial modeling, and submission support for Saudi Industrial Development Fund applications.",
+    title: "Feasibility Studies & SIDF Packages",
+    text: "Feasibility studies, market analysis, financial models, and submission-ready documentation for Saudi Industrial Development Fund applications.",
+    items: [
+      "Market and demand assessment",
+      "Financial model and assumptions",
+      "SIDF submission documentation",
+    ],
   },
   {
     icon: Globe2,
-    title: "Soft-Landing for Foreign Investors",
-    text: "Market-entry guidance, licensing coordination, local introductions, banking support, partner search, and early operational setup in Saudi Arabia.",
+    title: "Foreign Investor Soft-Landing",
+    text: "Guided entry into Saudi Arabia, including licensing coordination, local introductions, banking readiness, partner search, and early operating setup.",
+    items: [
+      "Entry pathway and licensing sequence",
+      "Banking and administrative readiness",
+      "Local partner and stakeholder access",
+    ],
   },
   {
     icon: Scale,
-    title: "Legal Representation Coordination",
-    text: "Formal legal representation and licensed legal services are coordinated through our partnering law firm, Muhammad Gamal Rushdi Law Firm.",
+    title: "Legal Representation Through Partners",
+    text: "When formal legal representation is required, Burooj coordinates licensed legal services through Muhammad Gamal Rushdi Law Firm.",
+    items: [
+      "Representation pathway coordination",
+      "Legal document and case handoff",
+      "Licensed Saudi law firm support",
+    ],
+  },
+] as const;
+
+const engagementTypes = [
+  {
+    label: "For international investors",
+    text: "Understand the Saudi opportunity, choose the right entry path, and identify the local steps needed before committing capital or resources.",
+  },
+  {
+    label: "For Saudi companies",
+    text: "Prepare credible expansion, financing, and partnership documentation for growth projects, industrial investments, and strategic initiatives.",
+  },
+  {
+    label: "For lenders and stakeholders",
+    text: "Present feasibility, legal coordination, and operating assumptions in a disciplined format that supports review, discussion, and decision-making.",
   },
 ] as const;
 
 const process = [
-  "Clarify the investment or expansion objective",
-  "Map the legal, licensing, and operating requirements",
-  "Prepare feasibility and financial documentation",
-  "Coordinate submissions, partners, and execution support",
+  "Define the business objective and Saudi market pathway",
+  "Map licensing, legal, financing, and operating requirements",
+  "Prepare the feasibility, financial, and commercial documentation",
+  "Coordinate submissions, partners, and on-the-ground execution support",
 ] as const;
 
 const capabilities = [
-  "Saudi market entry",
-  "SIDF feasibility packages",
-  "MISA and licensing coordination",
-  "Commercial and legal documentation",
-  "Partner and stakeholder introductions",
-  "Investment platform development",
+  "Saudi market-entry strategy",
+  "SIDF-ready feasibility studies",
+  "MISA and sector licensing coordination",
+  "Commercial and legal document coordination",
+  "Local partner and stakeholder introductions",
+  "Investor-facing platform development",
 ] as const;
 
 const sectors = [
@@ -72,7 +107,7 @@ function App() {
           <span className="brand-mark">B</span>
           <span>
             <strong>Burooj</strong>
-            <small>Management & Legal Consulting</small>
+            <small>Management and Legal Consulting</small>
           </span>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
@@ -90,12 +125,12 @@ function App() {
       <section className="hero" id="top">
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Jeddah-based advisory for Saudi market entry</p>
+          <p className="eyebrow">Jeddah-based Saudi advisory firm</p>
           <h1>Burooj Management and Legal Consulting Firm</h1>
           <p className="hero-copy">
-            Management, investment, and legal consulting for local and
-            international companies entering, operating, and growing in Saudi
-            Arabia.
+            We help local and international companies understand the Saudi
+            market, prepare serious feasibility and financing documentation, and
+            move from interest to practical execution.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#services">
@@ -115,11 +150,11 @@ function App() {
           </span>
           <span>
             <ShieldCheck size={18} aria-hidden="true" />
-            Partner law firm support
+            Legal representation via partner firm
           </span>
           <span>
             <Landmark size={18} aria-hidden="true" />
-            SIDF submission advisory
+            SIDF-ready documentation
           </span>
         </div>
       </section>
@@ -128,14 +163,14 @@ function App() {
         <div className="intro-grid">
           <div>
             <p className="section-kicker">Parent advisory firm</p>
-            <h2>Your practical partner for doing business in Saudi Arabia.</h2>
+            <h2>A practical partner for doing business in Saudi Arabia.</h2>
           </div>
           <p>
-            Burooj brings together management consulting, legal coordination,
-            feasibility preparation, investor soft-landing, and local execution
-            support. The firm helps clients move from interest in the Saudi
-            market to a clear path for licensing, financing, partnerships, and
-            operations.
+            Burooj is a Jeddah-based management and legal consulting firm for
+            companies that need clear advice, credible documentation, and local
+            coordination in Saudi Arabia. The firm connects strategy with the
+            practical work behind licensing, financing, partnerships, and legal
+            representation through trusted partners.
           </p>
         </div>
       </section>
@@ -143,11 +178,11 @@ function App() {
       <section className="section" id="services">
         <div className="section-heading">
           <p className="section-kicker">Services</p>
-          <h2>Advisory built around decisions, filings, and execution.</h2>
+          <h2>Advisory built around decisions, submissions, and execution.</h2>
           <p>
-            The work is designed for companies that need more than a report:
-            they need a route through Saudi requirements, stakeholders, and
-            practical next steps.
+            Burooj supports clients before, during, and after market entry:
+            clarifying the opportunity, preparing investor and lender-ready
+            materials, and coordinating the local steps needed to move forward.
           </p>
         </div>
         <div className="service-grid">
@@ -158,9 +193,37 @@ function App() {
                 <Icon size={24} aria-hidden="true" />
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
+                <ul>
+                  {service.items.map((item) => (
+                    <li key={item}>
+                      <Check size={15} aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="section engagement-section">
+        <div className="section-heading">
+          <p className="section-kicker">Engagement focus</p>
+          <h2>Clear advisory for the parties around the decision.</h2>
+          <p>
+            Burooj is positioned to support the business owner, the foreign
+            investor, the lender, and the local partner with documentation and
+            coordination that can be acted on.
+          </p>
+        </div>
+        <div className="engagement-grid">
+          {engagementTypes.map((item) => (
+            <article key={item.label}>
+              <h3>{item.label}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -168,7 +231,7 @@ function App() {
         <div className="band-inner">
           <div className="section-heading align-left">
             <p className="section-kicker">Approach</p>
-            <h2>Structured enough for banks and regulators. Practical enough for founders and operators.</h2>
+            <h2>Structured enough for lenders and regulators. Practical enough for founders and operators.</h2>
           </div>
           <div className="process-list">
             {process.map((item, index) => (
@@ -184,11 +247,12 @@ function App() {
       <section className="section split-section">
         <div>
           <p className="section-kicker">Capabilities</p>
-          <h2>Where Burooj supports clients.</h2>
+          <h2>Where Burooj is most useful.</h2>
           <p>
-            Burooj is built for the moments when a company needs to understand
-            the Saudi market, prepare serious documentation, and coordinate with
-            the right legal and institutional partners.
+            The firm is positioned for companies that are ready to make a real
+            decision about Saudi Arabia, whether they are assessing feasibility,
+            preparing for SIDF, seeking a local partner, or establishing a
+            first operating presence.
           </p>
         </div>
         <div className="check-grid">
@@ -206,15 +270,16 @@ function App() {
           <p className="section-kicker">Legal representation</p>
           <h2>Partner law firm coordination where licensed representation is required.</h2>
           <p>
-            Burooj provides management, investment, and legal consulting
-            coordination. Formal legal representation is provided through our
-            partnering licensed law firm, <strong>Muhammad Gamal Rushdi Law Firm</strong>.
+            Burooj provides management consulting and legal advisory
+            coordination. Formal legal representation and licensed legal
+            services are provided through our partnering Saudi law firm,{" "}
+            <strong>Muhammad Gamal Rushdi Law Firm</strong>.
           </p>
         </div>
         <div className="legal-panel">
           <BadgeCheck size={28} aria-hidden="true" />
           <h3>Muhammad Gamal Rushdi Law Firm</h3>
-          <p>Licensed Saudi law firm partner for formal legal representation and legal services.</p>
+          <p>Partner Saudi law firm for formal legal representation and licensed legal services.</p>
         </div>
       </section>
 
@@ -224,9 +289,9 @@ function App() {
           <h2>iinvestinsaudi.com</h2>
           <p>
             Burooj is developing investor-facing platforms that connect market
-            intelligence, opportunity discovery, and advisory support. The
-            iinvestinsaudi.com platform focuses on investment opportunities and
-            market-entry guidance in Saudi Arabia.
+            intelligence, opportunity discovery, and advisory support.
+            iinvestinsaudi.com is part of that initiative, focused on making
+            Saudi investment opportunities easier to understand and evaluate.
           </p>
           <a className="text-link" href="https://iinvestinsaudi.com/">
             Visit the platform
@@ -248,8 +313,9 @@ function App() {
           <p className="section-kicker">Contact</p>
           <h2>Discuss your Saudi market entry, feasibility study, or advisory need.</h2>
           <p>
-            Share where you are in the process, and Burooj can help define the
-            next practical step.
+            Share where you are in the process, and Burooj will help define the
+            next practical step with the right mix of advisory, documentation,
+            and partner coordination.
           </p>
         </div>
         <div className="contact-actions">
