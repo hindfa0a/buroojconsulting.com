@@ -408,6 +408,41 @@ h3 {
   line-height: 1.7;
 }
 
+.review-section {
+  padding-bottom: 52px;
+}
+
+.review-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.review-steps article {
+  min-height: 220px;
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.review-steps span {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+
+.review-steps h3 {
+  margin-top: 28px;
+}
+
+.review-steps p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.68;
+}
+
 .band {
   background: var(--navy);
   color: var(--white);
@@ -517,6 +552,275 @@ h3 {
   font-weight: 850;
 }
 
+.request-section {
+  padding: 86px clamp(20px, 4vw, 56px);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.request-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(32px, 6vw, 74px);
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  align-items: start;
+}
+
+.request-copy {
+  position: sticky;
+  top: 104px;
+}
+
+.request-copy h2 {
+  color: var(--white);
+}
+
+.request-copy > p {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 16px;
+  line-height: 1.76;
+}
+
+.active-pathway {
+  margin-top: 28px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.active-pathway strong {
+  display: block;
+  color: var(--white);
+  font-size: 17px;
+}
+
+.active-pathway p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.66;
+}
+
+.active-pathway ul {
+  display: grid;
+  gap: 9px;
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  list-style: none;
+}
+
+.active-pathway li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.active-pathway svg {
+  margin-top: 2px;
+  color: var(--gold);
+}
+
+.request-form {
+  padding: 28px;
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: var(--shadow);
+}
+
+.pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.pathway-grid button {
+  min-height: 58px;
+  padding: 12px 14px;
+  color: var(--ink);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pathway-grid button.selected {
+  color: var(--navy);
+  background: var(--sand);
+  border-color: rgba(201, 168, 76, 0.7);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.request-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.request-form .full {
+  grid-column: 1 / -1;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: #fbfcfd;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  font: inherit;
+  font-size: 14px;
+}
+
+.request-form textarea {
+  min-height: 132px;
+  padding-top: 12px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.request-form input.invalid,
+.request-form textarea.invalid {
+  border-color: #b91c1c;
+  background: #fff7f7;
+}
+
+.form-error {
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.file-field input {
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.file-field > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.file-list {
+  display: grid;
+  gap: 8px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.file-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.file-list span {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.consent-field {
+  display: grid !important;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 10px !important;
+  color: var(--muted) !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+  line-height: 1.55;
+}
+
+.consent-field input {
+  width: auto;
+  min-height: auto;
+  margin-top: 3px;
+}
+
+.legal-consent {
+  padding: 14px;
+  background: var(--sand);
+  border: 1px solid rgba(201, 168, 76, 0.38);
+}
+
+.request-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  margin-top: 22px;
+  color: var(--navy);
+  background: var(--gold);
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.request-submit:disabled {
+  cursor: wait;
+  opacity: 0.76;
+}
+
+.request-message {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.request-message.sent {
+  color: #065f46;
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.request-message.fallback {
+  color: #5f4506;
+  background: #fff8e1;
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.request-message.error {
+  color: #991b1b;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
 .contact-section {
   align-items: center;
   padding: 76px 0;
@@ -584,13 +888,19 @@ footer p {
   .legal-section,
   .platform-section,
   .contact-section,
+  .request-shell,
   .band-inner {
     grid-template-columns: 1fr;
   }
 
   .service-grid,
-  .engagement-grid {
+  .engagement-grid,
+  .review-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .request-copy {
+    position: static;
   }
 
   .contact-actions {
@@ -658,14 +968,29 @@ footer p {
 
   .service-grid,
   .engagement-grid,
+  .review-steps,
   .check-grid,
   .sector-list {
     grid-template-columns: 1fr;
   }
 
   .service-card,
+  .review-steps article,
   .engagement-grid article {
     min-height: auto;
+  }
+
+  .request-section {
+    padding: 62px 20px;
+  }
+
+  .request-form {
+    padding: 20px;
+  }
+
+  .pathway-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   .legal-copy {
