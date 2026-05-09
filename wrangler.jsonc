@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "burooj-intake",
+  "main": "worker/intake.ts",
+  "compatibility_date": "2026-05-09",
+  "routes": [
+    {
+      "pattern": "buroojconsulting.com/api/intake",
+      "zone_name": "buroojconsulting.com"
+    }
+  ],
+  "vars": {
+    "ALLOWED_ORIGIN": "https://buroojconsulting.com",
+    "INTAKE_FROM_EMAIL": "Burooj Intake <requests@buroojconsulting.com>",
+    "INTAKE_TO_EMAIL": "fhindi@iinvestinsaudi.com"
+  }
+}

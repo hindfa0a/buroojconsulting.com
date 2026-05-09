@@ -248,7 +248,7 @@ const getInitialRequestState = (): RequestFormState => {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const requestEndpoint = import.meta.env.VITE_BUROOJ_REQUEST_ENDPOINT as string | undefined;
+const requestEndpoint = (import.meta.env.VITE_BUROOJ_REQUEST_ENDPOINT as string | undefined) ?? "/api/intake";
 
 const formatFileSize = (size: number) => {
   if (size >= 1024 * 1024) return `${(size / (1024 * 1024)).toFixed(1)} MB`;
@@ -429,10 +429,15 @@ function App() {
         body: formData,
       });
 
-      if (!response.ok) throw new Error("Request submission failed");
+      const result = (await response.json().catch(() => ({}))) as { reference?: string; error?: string };
+      if (!response.ok) throw new Error(result.error || "Request submission failed");
 
       setSubmitState("sent");
-      setSubmitMessage("Your request was submitted successfully. Burooj will review it and respond with the next step.");
+      setSubmitMessage(
+        result.reference
+          ? `Your request was submitted successfully. Reference: ${result.reference}. Burooj will review it and respond with the next step.`
+          : "Your request was submitted successfully. Burooj will review it and respond with the next step.",
+      );
       setRequest(getInitialRequestState());
       setAttachments([]);
       setErrors({});
