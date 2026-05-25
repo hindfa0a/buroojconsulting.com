@@ -34,6 +34,7 @@ type RequestPathway =
   | "sidf_submission"
   | "soft_landing"
   | "opportunity_inquiry"
+  | "health_law_inquiry"
   | "general_market_entry";
 
 const serviceIcons = [BriefcaseBusiness, BarChart3, Globe2, Scale] as const;
@@ -186,7 +187,7 @@ const content = {
         "MISA and sector licensing coordination",
         "Commercial and legal document coordination",
         "Local partner and stakeholder introductions",
-        "Investor-facing platform development",
+        "Specialized platform development",
       ],
     },
     legal: {
@@ -199,24 +200,49 @@ const content = {
     },
     platform: {
       kicker: "Platforms",
-      title: "iinvestinsaudi.com",
+      title: "Burooj platforms and specialized initiatives",
       copy:
-        "Burooj is developing investor-facing platforms that connect market intelligence, opportunity discovery, and advisory support. iinvestinsaudi.com is part of that initiative, focused on making Saudi investment opportunities easier to understand and evaluate.",
-      link: "Visit the platform",
-      sectors: [
-        "Industrial investment",
-        "Manufacturing",
-        "Petrochemicals and downstream",
-        "Professional services",
-        "Real estate and infrastructure",
-        "International expansion",
+        "Burooj develops focused platforms under its advisory umbrella so each audience has a clear entry point, while serious requests are still handled through a disciplined professional review path.",
+      items: [
+        {
+          title: "iinvestinsaudi.com",
+          type: "Investment opportunities platform",
+          copy:
+            "A Burooj platform focused on making Saudi investment opportunities easier to understand, evaluate, and move into advisory review when an investor is ready to act.",
+          link: "https://iinvestinsaudi.com/",
+          linkLabel: "Visit iInvest in Saudi",
+          sectors: [
+            "Industrial investment",
+            "Manufacturing",
+            "Petrochemicals and downstream",
+            "Professional services",
+            "Real estate and infrastructure",
+            "International expansion",
+          ],
+        },
+        {
+          title: "Burooj Health Law",
+          type: "Healthcare legal services platform",
+          copy:
+            "A specialized Burooj platform for healthcare legal services in Saudi Arabia, serving patients, practitioners, medical facilities, insurance claims, and expert medical review pathways.",
+          link: "https://buroojhealthlaw.com/",
+          linkLabel: "Visit Burooj Health Law",
+          sectors: [
+            "Patients and families",
+            "Healthcare practitioners",
+            "Hospitals and clinics",
+            "Medical insurance claims",
+            "Medical expert review",
+            "Partner law firm representation",
+          ],
+        },
       ],
     },
     review: {
       kicker: "Request journey",
       title: "One professional intake desk for advisory, feasibility, SIDF, soft-landing, and legal coordination.",
       copy:
-        "iinvestinsaudi.com remains the opportunity showcase. Serious inquiries are routed to Burooj so every request can be reviewed, documented, and moved through a clear decision process.",
+        "iinvestinsaudi.com remains the opportunity showcase, while Burooj Health Law serves specialized healthcare legal matters. Serious inquiries from both platforms are routed into the appropriate Burooj review path so every request can be documented and moved through a clear decision process.",
       steps: [
         {
           label: "Submitted",
@@ -294,6 +320,12 @@ const content = {
           checklist: ["Opportunity reference", "Investor role", "Required support"],
         },
         {
+          value: "health_law_inquiry",
+          label: "Burooj Health Law request",
+          summary: "Healthcare legal services, medical insurance claims, facility matters, or medical expert review coordination.",
+          checklist: ["Matter type", "Medical documents", "Urgency and parties"],
+        },
+        {
           value: "general_market_entry",
           label: "General Saudi market entry",
           summary: "Early guidance for companies exploring whether and how to enter the Saudi market.",
@@ -316,6 +348,7 @@ const content = {
         "Individual investor",
         "Lender or stakeholder",
         "Legal client",
+        "Healthcare client or facility",
       ],
       fullName: "Full name *",
       workEmail: "Work email *",
@@ -327,7 +360,7 @@ const content = {
       preferredContact: "Preferred contact",
       contactOptions: ["Email", "WhatsApp", "Phone call"],
       sourceSite: "Source site",
-      sourcePlaceholder: "Direct or iinvestinsaudi",
+      sourcePlaceholder: "Direct, iinvestinsaudi, or Burooj Health Law",
       opportunityReference: "Opportunity reference",
       opportunityPlaceholder: "Optional unless sent from iinvestinsaudi",
       requestTitle: "Request title",
@@ -518,7 +551,7 @@ const content = {
         "تنسيق تراخيص الاستثمار والقطاعات ذات العلاقة",
         "تنسيق الوثائق التجارية والقانونية",
         "التعريف بالشركاء وأصحاب المصلحة محليا",
-        "تطوير منصات موجهة للمستثمرين",
+        "تطوير منصات متخصصة",
       ],
     },
     legal: {
@@ -531,24 +564,49 @@ const content = {
     },
     platform: {
       kicker: "المنصات",
-      title: "iinvestinsaudi.com",
+      title: "منصات بروج ومبادراتها المتخصصة",
       copy:
-        "يطور بروج منصات موجهة للمستثمرين تربط بين معلومات السوق، واستكشاف الفرص، والدعم الاستشاري. وتعد منصة iinvestinsaudi.com جزءا من هذه المبادرة، وتركز على تسهيل فهم الفرص الاستثمارية في المملكة وتقييمها.",
-      link: "زيارة المنصة",
-      sectors: [
-        "الاستثمار الصناعي",
-        "التصنيع",
-        "البتروكيماويات والصناعات التحويلية",
-        "الخدمات المهنية",
-        "العقار والبنية التحتية",
-        "التوسع الدولي",
+        "يطور بروج منصات ومبادرات متخصصة تحت مظلته الاستشارية، بحيث تخدم كل منصة مسارا واضحا لجمهورها، مع بقاء الطلبات الجادة ضمن مسار مراجعة مهني ومنظم.",
+      items: [
+        {
+          title: "iinvestinsaudi.com",
+          type: "منصة فرص استثمارية",
+          copy:
+            "منصة تابعة لبروج تركز على عرض الفرص الاستثمارية في المملكة وتسهيل فهمها وتقييمها، ثم تحويل الاستفسارات الجادة إلى مسار مراجعة استشارية عند جاهزية المستثمر للتحرك.",
+          link: "https://iinvestinsaudi.com/",
+          linkLabel: "زيارة منصة iInvest in Saudi",
+          sectors: [
+            "الاستثمار الصناعي",
+            "التصنيع",
+            "البتروكيماويات والصناعات التحويلية",
+            "الخدمات المهنية",
+            "العقار والبنية التحتية",
+            "التوسع الدولي",
+          ],
+        },
+        {
+          title: "بروج للخدمات القانونية الصحية",
+          type: "منصة خدمات قانونية صحية",
+          copy:
+            "منصة متخصصة تابعة لبروج للخدمات القانونية الصحية في المملكة، تخدم المرضى وذويهم، والممارسين الصحيين، والمنشآت الصحية، ومطالبات التأمين الطبي، ومسارات مراجعة الخبراء الطبيين.",
+          link: "https://buroojhealthlaw.com/",
+          linkLabel: "زيارة بروج للخدمات القانونية الصحية",
+          sectors: [
+            "المرضى وذووهم",
+            "الممارسون الصحيون",
+            "المستشفيات والعيادات",
+            "مطالبات التأمين الطبي",
+            "مراجعة الخبراء الطبيين",
+            "التمثيل عبر مكتب المحاماة الشريك",
+          ],
+        },
       ],
     },
     review: {
       kicker: "رحلة الطلب",
       title: "بوابة استقبال موحدة للاستشارات، والجدوى، والصندوق الصناعي، والتهيئة الاستثمارية، والتنسيق القانوني.",
       copy:
-        "تبقى منصة iinvestinsaudi.com واجهة لعرض الفرص الاستثمارية، بينما تحول الطلبات الجادة إلى بروج لمراجعتها وتوثيقها وتحريكها ضمن مسار قرار واضح.",
+        "تبقى منصة iinvestinsaudi.com واجهة لعرض الفرص الاستثمارية، بينما تمثل بروج للخدمات القانونية الصحية مسارا متخصصا للمسائل القانونية الصحية. وتحول الطلبات الجادة من المنصتين إلى مسار المراجعة المناسب لدى بروج لتوثيقها وتحريكها ضمن إجراء واضح.",
       steps: [
         {
           label: "استلام الطلب",
@@ -626,6 +684,12 @@ const content = {
           checklist: ["مرجع الفرصة", "دور المستثمر", "نوع الدعم المطلوب"],
         },
         {
+          value: "health_law_inquiry",
+          label: "طلب عبر بروج للخدمات القانونية الصحية",
+          summary: "خدمات قانونية صحية، أو مطالبات تأمين طبي، أو مسائل منشآت صحية، أو تنسيق مراجعة خبير طبي.",
+          checklist: ["نوع المسألة", "المستندات الطبية", "درجة الاستعجال والأطراف"],
+        },
+        {
           value: "general_market_entry",
           label: "دخول عام للسوق السعودي",
           summary: "إرشاد أولي للشركات التي تدرس إمكانية دخول السوق السعودي وآلية ذلك.",
@@ -648,6 +712,7 @@ const content = {
         "مستثمر فرد",
         "جهة تمويل أو صاحب مصلحة",
         "عميل قانوني",
+        "عميل أو منشأة في القطاع الصحي",
       ],
       fullName: "الاسم الكامل *",
       workEmail: "البريد الإلكتروني المهني *",
@@ -659,7 +724,7 @@ const content = {
       preferredContact: "وسيلة التواصل المفضلة",
       contactOptions: ["البريد الإلكتروني", "واتساب", "اتصال هاتفي"],
       sourceSite: "مصدر الطلب",
-      sourcePlaceholder: "مباشر أو iinvestinsaudi",
+      sourcePlaceholder: "مباشر أو iinvestinsaudi أو بروج للخدمات القانونية الصحية",
       opportunityReference: "مرجع الفرصة",
       opportunityPlaceholder: "اختياري إلا إذا كان الطلب محالا من iinvestinsaudi",
       requestTitle: "عنوان الطلب",
@@ -763,6 +828,10 @@ const SERVICE_PARAM_MAP: Record<string, RequestPathway> = {
   softlanding: "soft_landing",
   "soft-landing": "soft_landing",
   opportunity: "opportunity_inquiry",
+  healthcare: "health_law_inquiry",
+  healthlaw: "health_law_inquiry",
+  "health-law": "health_law_inquiry",
+  medical: "health_law_inquiry",
   market_entry: "general_market_entry",
 };
 
@@ -1164,17 +1233,26 @@ function App() {
           <p className="section-kicker">{t.platform.kicker}</p>
           <h2>{t.platform.title}</h2>
           <p>{t.platform.copy}</p>
-          <a className="text-link" href="https://iinvestinsaudi.com/">
-            {t.platform.link}
-            <ArrowRight size={17} aria-hidden="true" />
-          </a>
         </div>
-        <div className="sector-list">
-          {t.platform.sectors.map((sector) => (
-            <span key={sector}>
-              <Building2 size={16} aria-hidden="true" />
-              {sector}
-            </span>
+        <div className="platform-list">
+          {t.platform.items.map((platform) => (
+            <article className="platform-card" key={platform.title}>
+              <p className="platform-type">{platform.type}</p>
+              <h3>{platform.title}</h3>
+              <p>{platform.copy}</p>
+              <div className="sector-list platform-tags">
+                {platform.sectors.map((sector) => (
+                  <span key={sector}>
+                    <Building2 size={16} aria-hidden="true" />
+                    {sector}
+                  </span>
+                ))}
+              </div>
+              <a className="text-link" href={platform.link} target="_blank" rel="noreferrer">
+                {platform.linkLabel}
+                <ArrowRight size={17} aria-hidden="true" />
+              </a>
+            </article>
           ))}
         </div>
       </section>

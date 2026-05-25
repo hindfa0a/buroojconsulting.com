@@ -570,6 +570,49 @@ h3 {
   margin-top: 18px;
 }
 
+.platform-list {
+  display: grid;
+  gap: 18px;
+}
+
+.platform-card {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(16, 37, 63, 0.03);
+}
+
+.platform-card h3 {
+  margin-top: 10px;
+  font-size: clamp(22px, 2.2vw, 30px);
+}
+
+.platform-card p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.platform-card .platform-type {
+  margin-top: 0;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.platform-tags {
+  margin-top: 20px;
+}
+
+.platform-tags span {
+  min-height: 48px;
+  font-size: 13px;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -914,6 +957,10 @@ footer p {
 .rtl .legal-copy {
   border-right: 4px solid var(--teal);
   border-left: 0;
+}
+
+.rtl .platform-card .platform-type {
+  letter-spacing: 0;
 }
 
 .rtl .contact-actions {
