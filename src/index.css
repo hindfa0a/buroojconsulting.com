@@ -907,8 +907,6 @@ footer {
   width: min(220px, 62vw);
   height: auto;
   margin-bottom: 2px;
-  background: var(--white);
-  border: 1px solid rgba(16, 37, 63, 0.12);
 }
 
 footer strong {

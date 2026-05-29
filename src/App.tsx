@@ -1612,7 +1612,7 @@ function App() {
 
       <footer>
         <div className="footer-brand">
-          <img className="footer-logo" src="/assets/burooj-logo.png" alt="" />
+          <img className="footer-logo" src="/assets/burooj-logo-transparent.png" alt="" />
           <strong>{t.brand.fullName}</strong>
           <p>{t.brand.location}</p>
         </div>
