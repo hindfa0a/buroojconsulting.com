@@ -1064,11 +1064,7 @@ function App() {
     <main className={isArabic ? "rtl" : "ltr"} lang={t.meta.lang} dir={t.meta.dir}>
       <header className="site-header">
         <a href="#top" className="brand" aria-label={t.meta.brandAria}>
-          <span className="brand-mark">{isArabic ? "ب" : "B"}</span>
-          <span>
-            <strong>{t.brand.name}</strong>
-            <small>{t.brand.subtitle}</small>
-          </span>
+          <img className="brand-logo" src="/assets/burooj-logo-inverted.png" alt="" />
         </a>
         <nav className="nav-links" aria-label={t.meta.navLabel}>
           <a href="#services">{t.nav.services}</a>
@@ -1615,7 +1611,8 @@ function App() {
       </section>
 
       <footer>
-        <div>
+        <div className="footer-brand">
+          <img className="footer-logo" src="/assets/burooj-logo.png" alt="" />
           <strong>{t.brand.fullName}</strong>
           <p>{t.brand.location}</p>
         </div>
