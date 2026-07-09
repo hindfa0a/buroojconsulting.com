@@ -37,6 +37,13 @@ type RequestPathway =
   | "health_law_inquiry"
   | "general_market_entry";
 
+type PartnerItem = {
+  readonly name: string;
+  readonly url: string;
+  readonly logo: string;
+  readonly email?: string;
+};
+
 const serviceIcons = [BriefcaseBusiness, BarChart3, Globe2, Scale] as const;
 
 const MAX_FILES = 10;
@@ -241,6 +248,80 @@ const content = {
           ],
         },
       ],
+    },
+    partnerGroups: {
+      vendors: {
+        kicker: "Vendor partners",
+        title: "Vendor Partners",
+        copy:
+          "Specialized vendor relationships that support serious setup, industrial delivery, project infrastructure, materials, logistics, branding, and operational readiness in and around the Saudi market.",
+        items: [
+          {
+            name: "Alucor",
+            url: "https://www.alucor.com/",
+            logo: "/assets/partners/alucor.png",
+          },
+          {
+            name: "IPCO",
+            url: "https://www.ipco.com/",
+            logo: "/assets/partners/ipco.svg",
+          },
+          {
+            name: "Bruks Siwertell",
+            url: "https://bruks-siwertell.com/",
+            logo: "/assets/partners/bruks-siwertell.png",
+          },
+          {
+            name: "Enersul",
+            url: "https://www.enersul.com/",
+            logo: "/assets/partners/enersul.jpg",
+          },
+          {
+            name: "SANKYU Saudi Arabia",
+            url: "http://sankyu.com.sa/home/",
+            logo: "/assets/partners/sankyu.png",
+          },
+          {
+            name: "Qumreya",
+            url: "https://qumreya.com/",
+            logo: "/assets/partners/qumreya.png",
+          },
+        ],
+      },
+      success: {
+        kicker: "Partners in success",
+        title: "Partners in Success",
+        copy:
+          "Public and private organizations within the ecosystem Burooj works around when helping investors, founders, and operators move from ambition to a credible presence in the Kingdom.",
+        items: [
+          {
+            name: "Special Touch",
+            url: "http://www.hcspecialtouch.com/",
+            logo: "/assets/partners/special-touch.png",
+          },
+          {
+            name: "Petro Rabigh",
+            url: "https://www.petrorabigh.com/en",
+            logo: "/assets/partners/petrorabigh.png",
+            email: "invest@petrorabigh.com",
+          },
+          {
+            name: "SABIC",
+            url: "https://www.sabic.com/en",
+            logo: "/assets/partners/sabic.svg",
+          },
+          {
+            name: "King Abdullah Economic City",
+            url: "https://www.kaec.net/invest/",
+            logo: "/assets/partners/kaec.svg",
+          },
+          {
+            name: "Rabigh Governorate Municipality",
+            url: "https://momah.gov.sa/en/branches/rabigh-governorate-municipality",
+            logo: "/assets/partners/rabigh-municipality.png",
+          },
+        ],
+      },
     },
     review: {
       kicker: "Request journey",
@@ -610,6 +691,80 @@ const content = {
         },
       ],
     },
+    partnerGroups: {
+      vendors: {
+        kicker: "شركاء وموردون",
+        title: "شركاء وموردون",
+        copy:
+          "علاقات متخصصة تدعم التأسيس الجاد، والتنفيذ الصناعي، والبنية التشغيلية، والمواد، والخدمات اللوجستية، والهوية، وجاهزية التشغيل في السوق السعودي وما حوله.",
+        items: [
+          {
+            name: "Alucor",
+            url: "https://www.alucor.com/",
+            logo: "/assets/partners/alucor.png",
+          },
+          {
+            name: "IPCO",
+            url: "https://www.ipco.com/",
+            logo: "/assets/partners/ipco.svg",
+          },
+          {
+            name: "Bruks Siwertell",
+            url: "https://bruks-siwertell.com/",
+            logo: "/assets/partners/bruks-siwertell.png",
+          },
+          {
+            name: "Enersul",
+            url: "https://www.enersul.com/",
+            logo: "/assets/partners/enersul.jpg",
+          },
+          {
+            name: "SANKYU Saudi Arabia",
+            url: "http://sankyu.com.sa/home/",
+            logo: "/assets/partners/sankyu.png",
+          },
+          {
+            name: "Qumreya",
+            url: "https://qumreya.com/",
+            logo: "/assets/partners/qumreya.png",
+          },
+        ],
+      },
+      success: {
+        kicker: "شركاء النجاح",
+        title: "شركاء النجاح",
+        copy:
+          "جهات عامة وخاصة ضمن المنظومة التي يتحرك بروج حولها لمساعدة المستثمرين والمؤسسين والمشغلين على الانتقال من الطموح إلى حضور موثوق داخل المملكة.",
+        items: [
+          {
+            name: "Special Touch",
+            url: "http://www.hcspecialtouch.com/",
+            logo: "/assets/partners/special-touch.png",
+          },
+          {
+            name: "Petro Rabigh",
+            url: "https://www.petrorabigh.com/en",
+            logo: "/assets/partners/petrorabigh.png",
+            email: "invest@petrorabigh.com",
+          },
+          {
+            name: "SABIC",
+            url: "https://www.sabic.com/en",
+            logo: "/assets/partners/sabic.svg",
+          },
+          {
+            name: "مدينة الملك عبدالله الاقتصادية",
+            url: "https://www.kaec.net/invest/",
+            logo: "/assets/partners/kaec.svg",
+          },
+          {
+            name: "بلدية محافظة رابغ",
+            url: "https://momah.gov.sa/en/branches/rabigh-governorate-municipality",
+            logo: "/assets/partners/rabigh-municipality.png",
+          },
+        ],
+      },
+    },
     review: {
       kicker: "رحلة الطلب",
       title: "بوابة استقبال موحدة للاستشارات، والجدوى، والصندوق الصناعي، والتهيئة الاستثمارية، والتنسيق القانوني.",
@@ -948,6 +1103,28 @@ function App() {
     [request.servicePath, t.request.pathways],
   );
 
+  const renderPartnerCards = (partners: readonly PartnerItem[]) =>
+    partners.map((partner) => (
+      <article className="partner-card" key={partner.name}>
+        <a className="partner-logo-link" href={partner.url} target="_blank" rel="noreferrer" aria-label={partner.name}>
+          <span className="partner-logo-frame">
+            <img src={partner.logo} alt={partner.name} loading="lazy" />
+          </span>
+        </a>
+        <div className="partner-card-copy">
+          <a className="partner-name" href={partner.url} target="_blank" rel="noreferrer">
+            {partner.name}
+            <ArrowRight size={15} aria-hidden="true" />
+          </a>
+          {partner.email ? (
+            <a className="partner-note" href={`mailto:${partner.email}`}>
+              {partner.email}
+            </a>
+          ) : null}
+        </div>
+      </article>
+    ));
+
   useEffect(() => {
     document.documentElement.lang = t.meta.lang;
     document.documentElement.dir = t.meta.dir;
@@ -1262,6 +1439,24 @@ function App() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section partner-section" id="partners">
+        <div className="section-heading">
+          <p className="section-kicker">{t.partnerGroups.vendors.kicker}</p>
+          <h2>{t.partnerGroups.vendors.title}</h2>
+          <p>{t.partnerGroups.vendors.copy}</p>
+        </div>
+        <div className="partner-grid">{renderPartnerCards(t.partnerGroups.vendors.items)}</div>
+      </section>
+
+      <section className="section partner-section partner-success-section">
+        <div className="section-heading">
+          <p className="section-kicker">{t.partnerGroups.success.kicker}</p>
+          <h2>{t.partnerGroups.success.title}</h2>
+          <p>{t.partnerGroups.success.copy}</p>
+        </div>
+        <div className="partner-grid success-grid">{renderPartnerCards(t.partnerGroups.success.items)}</div>
       </section>
 
       <section className="section review-section">
