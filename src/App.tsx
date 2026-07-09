@@ -73,19 +73,23 @@ const content = {
       request: "Request",
       platforms: "Platforms",
       contact: "Contact",
-      cta: "Start a request",
+      cta: "I INVEST IN SAUDI",
+      ctaHref: "https://iinvestinsaudi.com/",
     },
     hero: {
       kicker: "Jeddah-based Saudi advisory firm",
-      title: "Burooj Management and Legal Consulting Firm",
+      title: "BUROOJ CONSULTING",
+      subtitle: "Venture Strategy, Market Entry & Counsel",
       copy:
-        "We help local and international companies understand the Saudi market, prepare serious feasibility and financing documentation, and move from interest to practical execution.",
-      primary: "Explore services",
-      secondary: "Start advisory request",
+        "We deliver premium venture strategy and legal advisory to help high-growth startups secure capital, build investment-ready infrastructure, and scale with absolute compliance, guiding international founders through a seamless investor soft landing, complete KSA company registration, and every legal requirement to establish a bulletproof presence in the Kingdom.",
+      primary: "I INVEST IN SAUDI",
+      primaryHref: "https://iinvestinsaudi.com/",
+      secondary: "Start Your KSA Market Entry",
+      tertiary: "Book a Venture Strategy Consultation",
       proofAria: "Firm highlights",
       proof: [
         "Jeddah, Saudi Arabia",
-        "Legal representation via partner firm",
+        "Legal Counsel & Compliance",
         "SIDF-ready documentation",
       ],
     },
@@ -437,20 +441,24 @@ const content = {
       request: "تقديم طلب",
       platforms: "المنصات",
       contact: "التواصل",
-      cta: "ابدأ الطلب",
+      cta: "I INVEST IN SAUDI",
+      ctaHref: "https://iinvestinsaudi.com/",
     },
     hero: {
       kicker: "مكتب استشاري سعودي مقره جدة",
-      title: "مكتب بروج للاستشارات الإدارية والقانونية",
+      title: "بروج للاستشارات",
+      subtitle: "استراتيجية المشاريع، دخول السوق والاستشارات القانونية",
       copy:
-        "نساند الشركات المحلية والدولية في فهم بيئة الاستثمار في المملكة، وإعداد دراسات الجدوى والملفات التمويلية باحترافية، والانتقال من مرحلة الاهتمام الأولي إلى خطوات تنفيذية واضحة.",
-      primary: "استعرض الخدمات",
-      secondary: "ابدأ طلبك الاستشاري",
+        "نقدم استراتيجية مشاريع واستشارات قانونية متميزة لمساعدة الشركات الناشئة عالية النمو على جذب رأس المال، وبناء بنية جاهزة للاستثمار، والتوسع مع التزام كامل، مع إرشاد المؤسسين الدوليين عبر دخول استثماري سلس إلى السوق السعودي، وتأسيس الشركة في المملكة، واستيفاء المتطلبات القانونية اللازمة لبناء حضور قوي في المملكة.",
+      primary: "I INVEST IN SAUDI",
+      primaryHref: "https://iinvestinsaudi.com/",
+      secondary: "ابدأ دخولك إلى السوق السعودي",
+      tertiary: "احجز استشارة استراتيجية للمشروع",
       proofAria: "أبرز ملامح المكتب",
       proof: [
         "جدة، المملكة العربية السعودية",
-        "التمثيل القانوني عبر مكتب محاماة شريك",
-        "ملفات جاهزة لمتطلبات صندوق التنمية الصناعية السعودي",
+        "استشارات قانونية والتزام",
+        "توثيق جاهز لمتطلبات الصندوق الصناعي",
       ],
     },
     intro: {
@@ -1082,9 +1090,8 @@ function App() {
             <Languages size={16} aria-hidden="true" />
             {t.meta.toggleLabel}
           </button>
-          <a className="header-action" href="#request">
+          <a className="header-action" href={t.nav.ctaHref}>
             {t.nav.cta}
-            <ArrowRight size={16} aria-hidden="true" />
           </a>
         </div>
       </header>
@@ -1094,14 +1101,18 @@ function App() {
         <div className="hero-content">
           <p className="eyebrow">{t.hero.kicker}</p>
           <h1>{t.hero.title}</h1>
+          <p className="hero-subtitle">{t.hero.subtitle}</p>
           <p className="hero-copy">{t.hero.copy}</p>
           <div className="hero-actions">
-            <a className="primary-button" href="#services">
+            <a className="primary-button" href={t.hero.primaryHref}>
               {t.hero.primary}
-              <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a className="secondary-button" href="#request">
               {t.hero.secondary}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a className="secondary-button" href="#request">
+              {t.hero.tertiary}
               <ArrowRight size={18} aria-hidden="true" />
             </a>
           </div>

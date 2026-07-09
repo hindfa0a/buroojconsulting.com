@@ -111,11 +111,12 @@ main {
   justify-content: center;
   gap: 8px;
   min-height: 40px;
-  padding: 0 16px;
+  min-width: 154px;
+  padding: 0 18px;
   border: 1px solid rgba(201, 168, 76, 0.7);
-  color: var(--white);
+  color: var(--gold);
   font-size: 13px;
-  font-weight: 650;
+  font-weight: 850;
 }
 
 .header-tools {
@@ -170,7 +171,7 @@ main {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 860px;
+  max-width: 1180px;
 }
 
 .eyebrow,
@@ -183,24 +184,42 @@ main {
 }
 
 h1 {
-  max-width: 980px;
+  max-width: 1180px;
   margin-top: 18px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(44px, 7.3vw, 92px);
+  font-size: clamp(44px, 6.2vw, 82px);
   line-height: 0.98;
   font-weight: 600;
   letter-spacing: 0;
 }
 
-.hero-copy {
-  max-width: 690px;
-  margin-top: 24px;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: clamp(18px, 2vw, 23px);
-  line-height: 1.55;
+.hero-subtitle {
+  max-width: 1180px;
+  margin-top: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1.05;
+  font-weight: 600;
 }
 
-.hero-actions,
+.hero-copy {
+  max-width: 800px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(18px, 1.72vw, 22px);
+  line-height: 1.62;
+  font-weight: 650;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(500px, 100%);
+  margin-top: 32px;
+}
+
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
@@ -220,6 +239,12 @@ h1 {
   font-weight: 800;
   font-size: 14px;
   border: 1px solid transparent;
+}
+
+.primary-button,
+.secondary-button {
+  min-height: 56px;
+  font-size: 16px;
 }
 
 .primary-button {
